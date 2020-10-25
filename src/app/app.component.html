@@ -1,7 +1,11 @@
 
 <div>
   <h1>Fred Ojure Diary</h1>
-  <p>Today's Entry {{ diary }}</p>
+  <ul>
+    <li *ngFor='let entry of entries'>
+      {{ entry }}
+    </li>
+  </ul>
 </div>
 
 <router-outlet></router-outlet>

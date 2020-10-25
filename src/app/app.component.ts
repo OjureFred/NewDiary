@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  diary = 'Watch Docker Video Tutorial';
+  entries: string[];
+  
+  constructor() {
+    this.entries = ["Watch Docker Tutorial", "Develop Simple Angular Application", "Finalize Hours and get project go-ahead from Charles"]
+  }
 }
