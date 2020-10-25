@@ -3,9 +3,14 @@
   <h1>Fred Ojure Diary</h1>
   <ul>
     <li *ngFor='let entry of entries'>
-      {{ entry }}
+      {{ entry.id }} - {{ entry.description}} - on - {{ entry.date }}
     </li>
   </ul>
+  <div>
+    <p>Feedback</p>
+    <p *ngIf='entries.length > 5'>Your Entries are too many for a day</p>
+    <p *ngIf='entries.length < 5'>Your Entries are ideal for a day</p>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
