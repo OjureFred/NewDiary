@@ -3,12 +3,15 @@
     <hr>
     <hr>
     <ul>
-        <li *ngFor='let entry of entries'>
-            {{ entry.description}}
+        <div *ngFor='let entry of entries; let i = index'>
+           <li> {{ entry.name}} </li>
+           <button (click)='toggleDetails(i)'>Toggle Details</button>
+            <app-entry-detail *ngIf='entry.showDetails' [entry]='entry'></app-entry-detail>
 
-        </li>
+        </div>
     </ul>
     <div>
+        <hr>
         <p>Feedback</p>
         <p *ngIf='entries.length > 5'>Your Entries are too many for a day</p>
         <p *ngIf='entries.length < 5'>Your Entries are ideal for a day</p>
