@@ -1,0 +1,16 @@
+<div>
+    <h1>Diary Entries</h1>
+    <hr>
+    <hr>
+    <ul>
+        <li *ngFor='let entry of entries'>
+            {{ entry.description}}
+
+        </li>
+    </ul>
+    <div>
+        <p>Feedback</p>
+        <p *ngIf='entries.length > 5'>Your Entries are too many for a day</p>
+        <p *ngIf='entries.length < 5'>Your Entries are ideal for a day</p>
+      </div>
+</div>
